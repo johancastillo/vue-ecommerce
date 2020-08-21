@@ -14,7 +14,8 @@ const app = new Vue({
     agregarFruta () {
       this.frutas.push({
         nombre: this.nuevaFruta, cantidad: 0
-      })
+      });
+      this.nuevaFruta = "";
     }
   }
 })

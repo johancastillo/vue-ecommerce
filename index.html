@@ -10,13 +10,16 @@
       <h1>{{ title }}</h1>
 
       <!-- v-model -->
-      <input type="text" v-model="nuevaFruta">
+      <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
       <button @click="agregarFruta">Agregar</button>
 
       <ul>
         <!-- Ciclo for con v-for -->
         <li v-for="fruta of frutas">
-          {{ fruta.nombre }} - {{ fruta.cantidad }}
+          <input type="number" v-model.number="fruta.cantidad">
+          {{ fruta.nombre }}
+          <button @click="fruta.cantidad++">+</button>
+          <button @click="fruta.cantidad--">-</button>
 
           <!-- Condicional con v-if -->
           <span v-if="fruta.cantidad === 0">- Sin stock</span>
