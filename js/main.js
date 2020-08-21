@@ -4,7 +4,7 @@ const app = new Vue({
     title: 'Hola Mundo con Vue',
     frutas: [
       {nombre: 'Pera', cantidad: 10},
-      {nombre: 'Manzana', cantidad: 5},
+      {nombre: 'Manzana', cantidad: 0},
       {nombre: 'Cambur', cantidad: 20},
       {nombre: 'Fresa', cantidad: 50},
     ]
