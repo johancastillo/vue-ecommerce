@@ -2,6 +2,8 @@ const app = new Vue({
   el: '#app',
   data: {
     title: 'Hola Mundo con Vue',
+    fondo: 'bg-warning',
+    color: false,
     frutas: [
       {nombre: 'Pera', cantidad: 10},
       {nombre: 'Manzana', cantidad: 0},
