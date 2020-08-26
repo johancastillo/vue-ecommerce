@@ -36,13 +36,11 @@
       <br>
 
       <input type="text" class="form-control my-3" v-model="fondo">
-      <input type="text" class="form-control my-3" v-model="color">
-
 
       <br>
       </div>
 
-      <p class="text-white p-3" :class="{'bg-info': color}">
+      <p class="text-white p-3" :class="{'bg-info': color!=1, 'bg-success': !color}">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
         enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -51,6 +49,8 @@
         nulla pariatur. Excepteur sint occaecat cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
+
+      <button class="btn btn-primary" @click="color = !color">Cambiar</button>
 
     </div>
 
