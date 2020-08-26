@@ -8,8 +8,11 @@
   </head>
   <body>
 
-    <div id="app">
-      <h1>{{ mensaje }}</h1>
+    <div id="app" class="container mt-4">
+      <h3>{{ mensaje }}</h3>
+      <h3>Invertido: {{ invertido }}</h3>
+
+      <input type="text" class="form-control" v-model="mensaje">
     </div>
 
 
