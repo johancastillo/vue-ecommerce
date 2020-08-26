@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hola mundo con Vue</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+
+    <div id="app" class="container" :class="['mt-4', 'p-3']">
+
+      <div :class="[fondo, 'p-3']">
+
+
+      <h1>{{ title }}</h1>
+
+      <!-- v-model -->
+      <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+      <button @click="agregarFruta">Agregar</button>
+
+      <ul>
+        <!-- Ciclo for con v-for -->
+        <li v-for="fruta of frutas">
+          <input type="number" v-model.number="fruta.cantidad">
+          {{ fruta.nombre }}
+          <button @click="fruta.cantidad++">+</button>
+          <button @click="fruta.cantidad--">-</button>
+
+          <!-- Condicional con v-if -->
+          <span v-if="fruta.cantidad === 0">- Sin stock</span>
+        </li>
+      </ul>
+
+      <h4>Total: {{ sumarFrutas }}</h4>
+
+      <br>
+
+      <input type="text" class="form-control my-3" v-model="fondo">
+
+      <br>
+      </div>
+
+      <p class="text-white p-3" :class="{'bg-info': color!=1, 'bg-success': !color}">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <button class="btn btn-primary" @click="color = !color">Cambiar</button>
+
+    </div>
+
+    <!-- Development -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
